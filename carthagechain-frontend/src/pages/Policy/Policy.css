@@ -1,0 +1,124 @@
+/* Privacy Page Container */
+.privacy-page-container {
+    width: 80%;
+    margin: 40px auto;
+    padding: 30px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.privacy-page-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Highlighted Text */
+.privacy-highlight {
+    font-weight: bold;
+    color: #a3e635;
+}
+
+/* Section Titles */
+.privacy-intro h1, 
+.privacy-intro h2 {
+    text-align: center;
+    color: #a3e635;
+    margin-bottom: 20px;
+}
+
+/* Title Styling */
+.privacy-intro h1 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #a3e635 0%, #4d7c0f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.privacy-intro h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #a3e635 0%, transparent 100%);
+    animation: titleUnderline 1s infinite;
+    animation: titleUnderline 3s ease-in-out infinite;
+    background: linear-gradient(45deg, #a3e635 0%, transparent 100%);
+    transform-origin: left center;
+}
+/* Privacy Sections */
+.privacy-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.privacy-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 12px rgba(163, 230, 53, 0.3);
+}
+
+/* List Styles */
+.privacy-section ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+.privacy-section ul li {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+/* CTA Section */
+.privacy-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.privacy-cta-buttons button {
+    background-color: #a3e635;
+    color: black;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.privacy-cta-buttons button:hover {
+    background-color: #84cc16;
+    transform: scale(1.05);
+}
+
+.privacy-section p{
+    text-align: center;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .privacy-page-container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .privacy-section {
+        padding: 15px;
+    }
+}

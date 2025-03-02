@@ -1,0 +1,123 @@
+/* Terms Page Container */
+.terms-page-container {
+    width: 80%;
+    margin: 40px auto;
+    padding: 30px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.terms-page-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Highlighted Text */
+.terms-highlight {
+    font-weight: bold;
+    color: #a3e635;
+}
+
+/* Section Titles */
+.terms-intro h1, 
+.terms-intro h2 {
+    text-align: center;
+    color: #a3e635;
+    margin-bottom: 20px;
+}
+
+/* Title Styling */
+.terms-intro h1 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #a3e635 0%, #4d7c0f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.terms-intro h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #a3e635 0%, transparent 100%);
+    animation: titleUnderline 3s ease-in-out infinite;
+    transform-origin: left center;
+}
+
+/* Terms Sections */
+.terms-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.terms-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 12px rgba(163, 230, 53, 0.3);
+}
+
+/* List Styles */
+.terms-section ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+.terms-section ul li {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+/* CTA Section */
+.terms-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.terms-cta-buttons button {
+    background-color: #a3e635;
+    color: black;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.terms-cta-buttons button:hover {
+    background-color: #84cc16;
+    transform: scale(1.05);
+}
+
+.terms-section p {
+    text-align: center;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .terms-page-container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .terms-section {
+        padding: 15px;
+    }
+}

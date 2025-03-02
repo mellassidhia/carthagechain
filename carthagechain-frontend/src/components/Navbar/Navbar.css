@@ -1,0 +1,229 @@
+:root {
+  --primary: #a3e635;
+  --primary-hover: #bef264;
+  --secondary: #84cc16;
+  --background: rgba(0, 0, 0, 0.95);
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-hover: rgba(255, 255, 255, 0.1);
+  --text: rgba(255, 255, 255, 0.8);
+  --text-bright: rgba(255, 255, 255, 1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base navbar styles */
+.navbar {
+  /* Existing styles */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 16px;
+  
+  /* New sticky styles */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--background);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(163, 230, 53, 0.1);
+}
+  
+  /* Logo and brand name section */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.navbar-brand:hover {
+  transform: translateX(5px);
+}
+
+.logo-container {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--glass);
+  padding: 0.5rem;
+  transition: var(--transition);
+  border: 1px solid rgba(163, 230, 53, 0.1);
+}
+
+.navbar-brand:hover .logo-container {
+  background: var(--glass-hover);
+  transform: rotate(5deg);
+}
+
+.logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px var(--primary));
+  transition: var(--transition);
+}
+
+.navbar-brand:hover .logo-image {
+  filter: drop-shadow(0 0 12px var(--primary-hover));
+}
+
+.brand-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  transition: var(--transition);
+}
+
+.brand-name::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), transparent);
+  transition: var(--transition);
+}
+
+.navbar-brand:hover .brand-name::after {
+  width: 100%;
+}
+  
+ /* Navigation links section */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text-bright);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--text-bright);
+  font-weight: 600;
+}
+
+  
+  /* Right side actions section */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .voter-link, .dashboard-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    margin-right: 16px;
+    transition: color 0.2s ease;
+  }
+  
+  .voter-link:hover, .dashboard-link:hover {
+    color: #a3e635;
+  }
+  
+  .voter-link svg, .dashboard-link svg {
+    margin-left: 4px;
+  }
+  
+  .nav-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+  }
+  
+  .candidate-button {
+    display: flex;
+    align-items: center;
+    background-color: #a3e635;
+    color: black;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  
+  .candidate-button:hover {
+    background-color: #84cc16;
+  }
+  
+  .candidate-button svg {
+    margin-left: 4px;
+  }
+  
+  .logout-button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .logout-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #a3e635;
+    color: #a3e635;
+  }
+  
+  /* Responsive adjustment for smaller screens */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .nav-links {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .nav-actions {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+ 

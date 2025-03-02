@@ -1,0 +1,58 @@
+.cta-section {
+  margin-top: 60px;
+  padding: 60px;
+  background-color: black;
+  text-align: center;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #a3e635;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.cta-button {
+  margin: 10px;
+  padding: 12px 24px;
+  background-color: #a3e635;
+  color: black;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+  background-color: #84cc16;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cta-section {
+      padding: 40px;
+  }
+
+  .cta-section h2 {
+      font-size: 2rem;
+  }
+
+  .cta-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+  }
+}

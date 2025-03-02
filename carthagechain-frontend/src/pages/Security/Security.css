@@ -1,0 +1,148 @@
+/* Security Page Container */
+.security-page-container {
+    width: 80%;
+    margin: 40px auto;
+    padding: 30px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.security-page-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.security-intro h1 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, #a3e635 0%, #4d7c0f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.security-intro h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #a3e635 0%, transparent 100%);
+    animation: titleUnderline 1s infinite;
+    animation: titleUnderline 3s ease-in-out infinite;
+    background: linear-gradient(45deg, #a3e635 0%, transparent 100%);
+    transform-origin: left center;
+}
+
+/* Highlighted Text */
+.security-highlight {
+    font-weight: bold;
+    color: #a3e635;
+}
+
+/* Section Titles */
+.security-intro h1, 
+.security-intro h2 {
+    text-align: center;
+    color: #a3e635;
+    margin-bottom: 20px;
+}
+
+/* Features Section */
+.security-features-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.security-feature-card {
+    width: 30%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.security-feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 12px rgba(163, 230, 53, 0.3);
+}
+
+/* Protection Section */
+.security-protection ul {
+    list-style: none;
+    text-align: center;
+}
+
+.security-protection ul li {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Compliance Section */
+.security-compliance ul {
+    list-style: none;
+    text-align: center;
+}
+
+.security-compliance ul li {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* CTA Section */
+.security-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.security-cta-buttons button {
+    background-color: #a3e635;
+    color: black;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.regulatory-paragraph{
+    text-align: center;
+}
+
+.security-cta-buttons button:hover {
+    background-color: #84cc16;
+    transform: scale(1.05);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .security-page-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .security-features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .security-feature-card {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
