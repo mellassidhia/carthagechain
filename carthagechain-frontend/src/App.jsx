@@ -10,6 +10,8 @@ import Policy from './pages/Policy/Policy';
 import TermsOfService from './pages/TermsOfService/TermsOfService';
 import ContactUs from './pages/ContactUs/ContactUs';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import Login from './pages/Login/Login';
+import CandidateForm from './pages/CandidateForm/CandidateForm';
 const App = () => {
   return (
     <Router>
@@ -23,6 +25,8 @@ const App = () => {
         <Route path="/policy" element={<Policy/>} />
         <Route path="/terms-of-use" element={<TermsOfService/>} />
         <Route path="/contact" element={<ContactUs/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/candidate-form" element={<CandidateForm/>} />
         {/* Add other routes here */}
       </Routes>
       <Footer/>

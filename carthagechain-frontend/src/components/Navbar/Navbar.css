@@ -12,24 +12,20 @@
 
 /* Base navbar styles */
 .navbar {
-  /* Existing styles */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: black;
+  background-color: var(--background);
   color: white;
   padding: 16px;
-  
-  /* New sticky styles */
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--background);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(163, 230, 53, 0.1);
 }
-  
-  /* Logo and brand name section */
+
+/* Logo and brand name section */
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -97,8 +93,8 @@
 .navbar-brand:hover .brand-name::after {
   width: 100%;
 }
-  
- /* Navigation links section */
+
+/* Navigation links section */
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -109,7 +105,7 @@
   color: var(--text);
   text-decoration: none;
   font-weight: 500;
-  padding: 0.5rem 0;
+  padding: 0;
   position: relative;
   transition: var(--transition);
 }
@@ -139,91 +135,200 @@
   font-weight: 600;
 }
 
-  
-  /* Right side actions section */
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .voter-link, .dashboard-link {
-    display: flex;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    margin-right: 16px;
-    transition: color 0.2s ease;
-  }
-  
-  .voter-link:hover, .dashboard-link:hover {
-    color: #a3e635;
-  }
-  
-  .voter-link svg, .dashboard-link svg {
-    margin-left: 4px;
-  }
-  
-  .nav-icon {
-    width: 18px;
-    height: 18px;
-    margin-right: 6px;
-  }
-  
-  .candidate-button {
-    display: flex;
-    align-items: center;
-    background-color: #a3e635;
-    color: black;
-    font-weight: 500;
-    padding: 4px 12px;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-  }
-  
-  .candidate-button:hover {
-    background-color: #84cc16;
-  }
-  
-  .candidate-button svg {
-    margin-left: 4px;
-  }
-  
-  .logout-button {
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  
-  .logout-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: #a3e635;
-    color: #a3e635;
-  }
-  
-  /* Responsive adjustment for smaller screens */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      gap: 16px;
-    }
-    
-    .nav-links {
-      width: 100%;
-      justify-content: center;
-    }
-    
-    .nav-actions {
-      width: 100%;
-      justify-content: center;
-    }
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  color: var(--text);
+  cursor: pointer;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: var(--transition);
+  font-weight: 500;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.dropdown-toggle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle {
+  color: var(--text-bright);
+}
+
+.dropdown:hover .dropdown-toggle::after {
+  width: 100%;
+}
+
+.dropdown-content {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: var(--background);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(163, 230, 53, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: var(--transition);
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(5px);
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.dropdown-content a:hover {
+  background: var(--glass-hover);
+  color: var(--text-bright);
+  padding-left: 2rem;
+}
+
+/* Right side actions section */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.voter-link, .dashboard-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  margin-right: 16px;
+  transition: color 0.2s ease;
+}
+
+.voter-link:hover, .dashboard-link:hover {
+  color: #a3e635;
+}
+
+.voter-link svg, .dashboard-link svg {
+  margin-left: 4px;
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+}
+
+.candidate-button {
+  display: flex;
+  align-items: center;
+  background-color: #a3e635;
+  color: black;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.candidate-button:hover {
+  background-color: #84cc16;
+}
+
+.candidate-button svg {
+  margin-left: 4px;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #a3e635;
+  color: #a3e635;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 16px;
   }
 
- 
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dropdown {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-toggle {
+    padding: 0.5rem 1rem;
+  }
+
+  .dropdown-content {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    display: none;
+    width: 100%;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+    transform: none;
+  }
+
+  .dropdown-content a {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .dropdown-content a:hover {
+    padding-left: 1rem;
+  }
+}
